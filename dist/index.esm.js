@@ -2451,9 +2451,14 @@ var StyledNav = styled.nav(templateObject_4$2 || (templateObject_4$2 = __makeTem
     var theme = _a.theme;
     return theme.nav.background;
 });
+
 var BodyWrapper = styled.div(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
-var ConnectContainer = styled.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"])));
-var Inner = styled.div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"], ["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
+var HConnectContainer = styled.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n ", " {\n    display: none;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n ", " {\n    display: none;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm_m;
+});
+var FConnectContainer = styled.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"])));
+var Inner = styled.div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n", "{display: none} "], ["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n ", "{display: none} "])), function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? MENU_HEIGHT + "px" : 0);
 });
@@ -2463,6 +2468,15 @@ var MobileOnlyOverlay = styled(Overlay)(templateObject_8 || (templateObject_8 = 
 });
 styled.div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0 16px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0 16px;\n"])));
 styled.a(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
+var Footer = styled.div(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n padding-left: 10px;\n bottom: 0px;\n position: fixed;\n background-color: ", ";\n width: 100%;\n height: auto;\n border-top: solid 2px rgba(133,133,133,0.1);\n z-index: 20;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n ", "{display: none} "], ["\n padding-left: 10px;\n bottom: 0;\n position: fixed;\n background: #ffffff;\n width: 100%;\n height: auto;\n border-top: solid 2px rgba(133,133,133,0.1);\n z-index: 20; \n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n ", "{display: none} "])), function (_a) {
+    var theme = _a.theme;
+    return theme.nav.background;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+});
+var Container = styled.div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"])));
+ 
 var Menu = function (_a) {
     var _b;
     var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, kiwiPriceUsd = _a.kiwiPriceUsd, links = _a.links, profile = _a.profile, children = _a.children;
@@ -2506,23 +2520,25 @@ var Menu = function (_a) {
     return (React.createElement(Wrapper$1, null,
         React.createElement(StyledNav, { showMenu: showMenu },
             React.createElement(SubNavContainer, null,
-                React.createElement(ConnectContainer, null,
+                React.createElement(Container, null,
                     React.createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
                     React.createElement(Flex, null,
                         React.createElement(PanelBody, { isPushed: true, isMobile: isMobile, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, kiwiPriceUsd: kiwiPriceUsd, pushNav: setIsPushed, links: links}))),
-                React.createElement(ConnectContainer, null,
-                    React.createElement(Text, { color: "textSubtle", mx: 1, bold: true }, "$" + (kiwiPriceUsd ? kiwiPriceUsd.toFixed(4) : 0)),
+                React.createElement(HConnectContainer, null,
+                    React.createElement(UserBlock, { account: account, login: login, logout: logout }),
                     React.createElement(Button, { variant: "text", mx: 3, onClick: function () { return toggleTheme(!isDark); } },
                         React.createElement(Flex, { alignItems: "center" }, isDark ? React.createElement(SunIcon, { color: isDark ? "textDisabled" : "text", width: "24px" })
-                            : React.createElement(MoonIcon, { color: isDark ? "text" : "textDisabled", width: "24px" }))),
+                            : React.createElement(MoonIcon, { color: isDark ? "text" : "textDisabled", width: "24px" })))))),
+            React.createElement(BodyWrapper, null, 
+                React.createElement(Inner, { isPushed: isPushed, showMenu: showMenu }, children),
+                React.createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" })),
+            React.createElement(Footer, null,
+                React.createElement(FConnectContainer, null,
                     React.createElement(UserBlock, { account: account, login: login, logout: logout }),
-                    React.createElement(Dropdown, { position: "top-left", target: React.createElement(Button, { mx: 5, variant: "text" },
-                            React.createElement(Text, { color: "textSubtle" }, currentLang === null || currentLang === void 0 ? void 0 : currentLang.toUpperCase())) }, langs.map(function (lang) { return (React.createElement(MenuButton, { key: lang.code, fullWidth: true, onClick: function () { return setLang(lang); }, 
-                        // Safari fix
-                        style: { minHeight: "32px", height: "auto"} }, lang.language)); }))))),
-        React.createElement(BodyWrapper, null,
-            React.createElement(Inner, { isPushed: isPushed, showMenu: showMenu }, children),
-            React.createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" }))));
+                    React.createElement(Button, { variant: "text", mx: 3, onClick: function () { return toggleTheme(!isDark); } },
+                        React.createElement(Flex, { alignItems: "center" }, isDark ? React.createElement(SunIcon, { color: isDark ? "textDisabled" : "text", width: "24px" })
+                            : React.createElement(MoonIcon, { color: isDark ? "text" : "textDisabled", width: "24px" })))))
+            ));
 };
 var templateObject_1$F, templateObject_2$e, templateObject_3$7, templateObject_4$2, templateObject_5$1, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10;
 
