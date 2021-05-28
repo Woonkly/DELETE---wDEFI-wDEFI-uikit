@@ -2467,7 +2467,7 @@ var MobileOnlyOverlay = styled(Overlay)(templateObject_8 || (templateObject_8 = 
     return theme.mediaQueries.nav;
 });
 styled.div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0 16px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0 16px;\n"])));
-styled.a(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
+styled.a(templateObject_10 || (templateObject_10, templateObject_11, templateObject_12 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
 var Footer = styled.div(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n padding-left: 10px;\n bottom: 0px;\n position: fixed;\n background-color: ", ";\n width: 100%;\n height: auto;\n border-top: solid 2px rgba(133,133,133,0.1);\n z-index: 20;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n ", "{display: none} "], ["\n padding-left: 10px;\n bottom: 0;\n position: fixed;\n background: #ffffff;\n width: 100%;\n height: auto;\n border-top: solid 2px rgba(133,133,133,0.1);\n z-index: 20; \n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n ", "{display: none} "])), function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
@@ -2540,7 +2540,7 @@ var Menu = function (_a) {
                             : React.createElement(MoonIcon, { color: isDark ? "text" : "textDisabled", width: "24px" })))))
             ));
 };
-var templateObject_1$F, templateObject_2$e, templateObject_3$7, templateObject_4$2, templateObject_5$1, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10;
+var templateObject_1$F, templateObject_2$e, templateObject_3$7, templateObject_4$2, templateObject_5$1, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12;
 
 var ToastAction = function (_a) {
     var action = _a.action;
